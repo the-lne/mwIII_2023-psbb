@@ -4,6 +4,7 @@
 # keybindings. Obviously, pip and some modules may need to be 
 # installed.
 
+
 import time
 import random
 import mouse
@@ -18,6 +19,7 @@ looking  = [1600, 500, 200, 25, 1200, 700, 800, 1000, 3000, 300]
 
 keyboard = Controller() 
 flipbit = 0
+myMouse_x, myMouse_y = win32api.GetCursorPos()
 
 while(1):
     # skip death cutscene or select gun on match startup
@@ -51,9 +53,9 @@ while(1):
             keyboard.release('q')
     else:
         keyboard.press('e')
-        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 0, 100, 0, 0)
+        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 0, 750, 0, 0)
         keyboard.release('e')
-        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 0, -100, 0, 0)
+        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 0, myMouse_y, 0, 0)
 
     # sleeping allows for attempted map traversal while pressing movement[currentKey]
     time.sleep(random.uniform(0, 2))
