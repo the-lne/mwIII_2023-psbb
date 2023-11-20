@@ -38,17 +38,18 @@ while(1):
 
     # decided if its time to throw a grenade or shoot
     if(flipbit):
-        for j in range(int(random.uniform(1, 7))):
+        for j in range(int(random.uniform(1, 5))):
             mouse.click('left') 
             keyboard.press('q')
-            time.sleep(random.uniform(0, 1))
+            time.sleep(random.uniform(0,1))
             keyboard.release('q')
     else:
         keyboard.press('e')
+        time.sleep(random.uniform(0,1))
         keyboard.release('e')
 
     # sleeping allows for attempted map traversal while pressing movement[currentKey]
-    time.sleep(random.uniform(0, 3))
+    time.sleep(random.uniform(0, 2))
     keyboard.release(movement[currentKey])
 
     # flip the bit that determines whether you shoot or throw a grenade
