@@ -45,7 +45,7 @@ while(1):
             keyboard.release('q')
     else:
         keyboard.press('e')
-        time.sleep(random.uniform(0,1))
+        time.sleep(random.uniform(0,2))
         keyboard.release('e')
 
     # sleeping allows for attempted map traversal while pressing movement[currentKey]
