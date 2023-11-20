@@ -37,7 +37,7 @@ while(1):
     keyboard.release('x')
 
     # decided if its time to throw a grenade or shoot
-    if(flipbit):
+    if(flipbit == 1):
         for j in range(int(random.uniform(1, 5))):
             mouse.click('left') 
             keyboard.press('q')
@@ -55,5 +55,5 @@ while(1):
     # flip the bit that determines whether you shoot or throw a grenade
     if(flipbit == 1):
         flipbit = 0
-    elif (flipbit == 0):
+    else:
         flipbit = 1
