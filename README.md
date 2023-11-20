@@ -5,4 +5,4 @@ Modern Warfare III (Sledgehammer Games, 2023) is the worst-reviewed Call of Duty
 
 Professional Call of Duty players, the community, and reviewers alike have unanimously deemed this game unplayable due to reports of Sledgehammer Games' suite of Engagement Optimization technologies, most notably doing the following with respect to user profile statistics, dynamically sizing hitboxes, prioritizing algorithmic analysis results of player stats over geography in online matchmaking, and blatant rigging of games (e.g. connecting players on a winning streak with matches that are bound to lose and in one recorded instance, matches located on another continent).
 
-If the "algorithm" as many call it, truly works against statistically above-average players, then the opposite must be true. This program actively lowers a players statistics. 
+If the "algorithm" as many call it, truly works against statistically above-average players, then the opposite must be true. This program actively lowers a player's statistics in an attempt to, at the very least, anecdotally prove or disprove this theory. 
