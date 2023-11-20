@@ -22,8 +22,8 @@ flipbit = 0
 while(1):
     # skip death cutscene or select gun on match startup
     keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
     keyboard.press('f')
+    keyboard.release(Key.enter)
     keyboard.release('f')
 
     # select random values for keyboard presses and mouse movements
@@ -38,6 +38,10 @@ while(1):
     # switch weapons
     mouse.wheel(random.uniform(0, 3))
 
+    # deploy equipment
+    keyboard.press('x')
+    keyboard.release('x')
+
     # decided if its time to throw a grenade or shoot
     if(flipbit):
         for j in range(int(random.uniform(1, 5))):
@@ -47,9 +51,9 @@ while(1):
             keyboard.release('q')
     else:
         keyboard.press('e')
-        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 0, 0, 100, 0)
+        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 0, 100, 0, 0)
         keyboard.release('e')
-        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 0, 0, -100, 0)
+        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 0, -100, 0, 0)
 
     # sleeping allows for attempted map traversal while pressing movement[currentKey]
     time.sleep(random.uniform(0, 2))
