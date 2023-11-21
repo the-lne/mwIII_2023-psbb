@@ -30,7 +30,7 @@ while(1):
     # switch weapons
     mouse.wheel(random.uniform(0, 3))
 
-    # decided if its time to throw a grenade or shoot
+    # decide if its time to throw a grenade or shoot
     if(flipbit == 0):
         for j in range(int(random.uniform(2, 5))):
             mouse.click('left') 
@@ -59,8 +59,3 @@ while(1):
         flipbit = 1
     else:
         flipbit = 0
-
-
-# the y axis doens't seem to work on win32api
-# look into tensor flow or photo analysis
-#   possibly use obs' streaming capability
