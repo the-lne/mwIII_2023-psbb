@@ -39,9 +39,16 @@ while(1):
             keyboard.release('q')
             mouse.click('left') 
     else:
-        keyboard.press('e')
-        time.sleep(random.uniform(1,2))
-        keyboard.release('e')
+        for j in range(int(random.uniform(2, 5))):
+            keyboard.press('e')
+            keyboard.press(Key.space)
+            keyboard.release(Key.space)
+            time.sleep(random.uniform(1,2))
+            keyboard.press(Key.space)
+            keyboard.release(Key.space)
+            keyboard.release('e')
+            keyboard.press(Key.space)
+            keyboard.release(Key.space)
 
     # sleeping allows for attempted map traversal while pressing movement[currentKey]
     time.sleep(random.uniform(0, 2))
@@ -52,3 +59,8 @@ while(1):
         flipbit = 1
     else:
         flipbit = 0
+
+
+# the y axis doens't seem to work on win32api
+# look into tensor flow or photo analysis
+#   possibly use obs' streaming capability
