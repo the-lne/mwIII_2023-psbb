@@ -1,0 +1,61 @@
+# walk forward, when the screen stops changing, begin troubleshooting
+
+import time
+import random
+import mouse
+from pynput.keyboard import Controller, Key
+import win32api, win32con
+import os
+#from mss import mss
+import pyscreenshot as ImageGrab
+import cv2
+import numpy as np
+
+# returns True if two screen shots are the same, indicating that, yes, the player is stuck
+def amistuck():
+    im1 = ImageGrab.grab()
+    im1 = ImageGrab.grab(bbox=(680,680,700,700))
+    im1.save('old.png')
+
+    im2 = ImageGrab.grab()
+    im2 = ImageGrab.grab(bbox=(680,680,700,700))
+    im2.save('current.png')
+
+    # replace this with ai question "are these the same picture)
+    if ((cv2.cvtColor(cv2.imread('old.png'), cv2.COLOR_BGR2HSV) == 
+            cv2.cvtColor(cv2.imread('current.png'), cv2.COLOR_BGR2HSV)).all() == True):
+        print("theyre the same picture")
+        return True
+    else:
+        print("theyre different pictures")
+        return False
+
+keyboard = Controller() 
+
+# 5 second delay before the program begins
+time.sleep(5)
+
+while(1):
+    keyboard.press('w')
+    time.sleep(random.uniform(0, 2))
+    if(amistuck()):
+        keyboard.press(Key.space)
+        time.sleep(0.1)
+        keyboard.release(Key.space)
+        # call a randomized movement pattern from an array of movement 
+        # patterns using the randomization design pattern from the first 
+        # version of this script
+        if(amistuck()):
+            keyboard.press('s')
+            time.sleep(0.2)
+            keyboard.release('s')
+            win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 
+                    int(random.uniform(200, 1000)), 0, 0, 0)
+    keyboard.release('w')
+
+#os.system('cmd /c "del old.png"')
+#os.system('cmd /c "del current.png"')
+    # start doing random shit
+    #keyboard.press('f')
+    #keyboard.release('f')
+    #mouse.click('left') 
