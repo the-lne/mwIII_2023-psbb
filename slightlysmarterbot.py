@@ -20,7 +20,10 @@ throwables = ["e", "q", "e"]
 keyboard = Controller() 
 
 
-# returns True if two screen shots are the same, indicating that, yes, the player is stuck
+# returns True if two screen shots are the same, indicating that, yes, the player is stuck.
+# the way screen shots are compared is weird and sloppy, basically, the screenshots are 
+# edited down to small 10px squares, if they have the same colors, they are deemed to be 
+# the same picture.
 def iamstuck():
     im1 = ImageGrab.grab()
     im2 = ImageGrab.grab()
@@ -37,9 +40,6 @@ def iamstuck():
         os.system('cmd /c "del old.png"') 
         os.system('cmd /c "del current.png"')
         return True
-    # the only way this function would enter is if the player is not moving,
-    # meaning that this else statement doesn't really do anything... i guess? 
-    # im tired, ill figure this out later
     else:
         print("is moving")
         os.system('cmd /c "del old.png"') 
@@ -60,7 +60,7 @@ def shootemgungumstyle(iterator):
             time.sleep(0.1)
 
 
-# When stuck, this puppy is called to deploy head movement in an attempt to traverse the map 
+# when iamstuck() returns True, this function is called in an attempt to traverse the map
 def movementProtocol():
     i = 0
     total = int(random.uniform(1, 3))
