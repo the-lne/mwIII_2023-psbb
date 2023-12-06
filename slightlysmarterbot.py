@@ -69,6 +69,7 @@ def movementProtocol():
                 looking[int(random.uniform(0, --len(looking)))], 0, 0, 0)
         shootemgungumstyle(i)
         time.sleep(random.uniform(1, 2))
+        # i++ seriously doesn't work in python?? sacrilege! 
         i = i+1
     return
 
