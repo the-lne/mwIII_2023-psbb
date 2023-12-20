@@ -55,6 +55,12 @@ while(1):
     keyboard.release(movement[currentKey])
 
     # flip the bit that determines whether you shoot or throw a grenade
+
+
+
+
+
+    # did crontab work?
     if(flipbit == 0):
         flipbit = 1
     else:
